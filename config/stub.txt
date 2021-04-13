@@ -1,0 +1,40 @@
+read numberOfCells:int
+loop numberOfCells read index:int richness:int neigh0:int neigh1:int neigh2:int neigh3:int neigh4:int neigh5:int
+
+gameloop
+
+read day:int
+read nutrients:int
+read sun:int score:int
+read oppSun:int oppScore:int oppIsWaiting:bool
+
+read numberOfTrees:int
+loop numberOfTrees read cellIndex:int size:int isMine:bool isDormant:bool
+
+read numberOfPossibleMoves:int
+loop numberOfPossibleMoves read possibleMove:string(31)
+
+write WAIT
+
+INPUT
+numberOfCells: 37
+index: 0 is the center cell, the next cells spiral outwards
+richness: 0 if the cell is unusable, 1-3 for usable cells
+neigh0: the index of the neighbouring cell for each direction
+day: the game lasts 24 days: 0-23
+nutrients: the base score you gain from the next COMPLETE action
+sun: your sun points
+score: your current score
+oppSun: opponent's sun points
+oppScore: opponent's score
+oppIsWaiting: whether your opponent is asleep until the next day
+numberOfTrees: the current amount of trees
+cellIndex: location of this tree
+size: size of this tree: 0-3
+isMine: 1 if this is your tree
+isDormant: 1 if this tree is dormant
+numberOfPossibleActions: all legal actions
+possibleAction: try printing something from here to start with
+
+OUTPUT
+GROW cellIdx | SEED sourceIdx targetIdx | COMPLETE cellIdx | WAIT <message>

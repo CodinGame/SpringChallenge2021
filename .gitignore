@@ -1,0 +1,10 @@
+/target/
+/.project
+/.classpath
+/bin/
+.factorypath
+/.settings/
+statement_en.html
+statement_fr.html
+.pydevproject
+copy.sh
