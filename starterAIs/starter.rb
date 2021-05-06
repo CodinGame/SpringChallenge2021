@@ -131,5 +131,5 @@ loop do
 
   action = game.get_next_action
 
-  p action.to_s
+  puts action.to_s
 end
