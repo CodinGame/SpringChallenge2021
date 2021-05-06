@@ -104,13 +104,13 @@ while (true) {
       new Tree(cellIndex, size, isMine, isDormant)
     )
   }
-  game.possibleAction = []
+  game.possibleActions = []
   const numberOfPossibleAction = parseInt(readline());
   for (let i = 0; i < numberOfPossibleAction; i++) {
     const possibleAction = readline();
-    game.possibleAction.push(Action.parse(possibleAction))
+    game.possibleActions.push(Action.parse(possibleAction))
   }
 
   const action = game.getNextAction()
-  console.log(action);
+  console.log(action.toString());
 }
