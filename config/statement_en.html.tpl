@@ -31,6 +31,13 @@ text-align: left;">
 
 </div>
 
+<div style="padding: 20px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    text-align: left;">
+    <em>Tutorial video by Gaurav Sen: <a href="https://youtu.be/gZMdOiqchDk" rel="noopener" target="_blank" >https://youtu.be/gZMdOiqchDk</a></em>
+  </div>
+
 
   <!-- GOAL -->
   <div class="statement-section statement-goal">
@@ -786,7 +793,7 @@ text-align: left;">
         src="//cdn.codingame.com/smash-the-code/statement/league_wood_04.png" /></div>
 
     <div style="text-align: center; font-weight: 700; margin-bottom: 6px;">
-      What is in store for me in the higher leagues ?
+      What is in store for me in the higher leagues?
     </div>
     extra rules available in higher leagues are:
     <ul>

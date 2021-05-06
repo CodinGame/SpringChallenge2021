@@ -28,6 +28,14 @@
     </span>
   </div>
 
+  <div style="padding: 20px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    text-align: left;">
+    <em>Vidéo tuto par Gaurav Sen: <a href="https://youtu.be/gZMdOiqchDk" rel="noopener" target="_blank" >https://youtu.be/gZMdOiqchDk</a></em>
+  </div>
+
+
   <!-- GOAL -->
   <div class="statement-section statement-goal">
     <h2>
