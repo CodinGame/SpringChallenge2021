@@ -138,6 +138,12 @@ class Player
             int neigh3 = int.Parse(inputs[5]);
             int neigh4 = int.Parse(inputs[6]);
             int neigh5 = int.Parse(inputs[7]);
+            Cell cell = new Cell(
+                index, 
+                richness, 
+                new int[] {neigh0, neigh1, neigh2, neigh3, neigh4, neigh5}
+            );
+            game.board.Add(cell);
         }
 
         // game loop
