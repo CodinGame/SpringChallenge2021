@@ -3,18 +3,20 @@ import java.util.List;
 import java.util.Scanner;
 
 class Cell {
+
     int index;
-    int richess;
+    int richness;
     int[] neighbours;
 
-    public Cell(int index, int richess, int[] neighbours) {
+    public Cell(int index, int richness, int[] neighbours) {
         this.index = index;
-        this.richess = richess;
+        this.richness = richness;
         this.neighbours = neighbours;
     }
 }
 
 class Tree {
+
     int cellIndex;
     int size;
     boolean isMine;
@@ -29,25 +31,11 @@ class Tree {
 }
 
 class Action {
+
     static final String WAIT = "WAIT";
     static final String SEED = "SEED";
     static final String GROW = "GROW";
     static final String COMPLETE = "COMPLETE";
-
-    static Action parse(String action) {
-        String[] parts = action.split(" ");
-        switch (parts[0]) {
-        case WAIT:
-            return new Action(WAIT);
-        case SEED:
-            return new Action(SEED, Integer.valueOf(parts[1]), Integer.valueOf(parts[2]));
-        case GROW:
-        case COMPLETE:
-        default:
-            return new Action(parts[0], Integer.valueOf(parts[1]));
-        }
-    }
-
     String type;
     Integer targetCellIdx;
     Integer sourceCellIdx;
@@ -66,12 +54,26 @@ class Action {
         this(type, null, null);
     }
 
+    static Action parse(String action) {
+        String[] parts = action.split(" ");
+        switch (parts[0]) {
+            case WAIT:
+                return new Action(WAIT);
+            case SEED:
+                return new Action(SEED, Integer.valueOf(parts[1]), Integer.valueOf(parts[2]));
+            case GROW:
+            case COMPLETE:
+            default:
+                return new Action(parts[0], Integer.valueOf(parts[1]));
+        }
+    }
+
     @Override
     public String toString() {
-        if (type == WAIT) {
+        if (WAIT.equalsIgnoreCase(type)) {
             return Action.WAIT;
         }
-        if (type == SEED) {
+        if (SEED.equalsIgnoreCase(type)) {
             return String.format("%s %d %d", SEED, sourceCellIdx, targetCellIdx);
         }
         return String.format("%s %d", type, targetCellIdx);
@@ -79,6 +81,7 @@ class Action {
 }
 
 class Game {
+
     int day;
     int nutrients;
     List<Cell> board;
@@ -102,6 +105,7 @@ class Game {
 }
 
 class Player {
+
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
 
@@ -117,7 +121,7 @@ class Player {
             int neigh3 = in.nextInt();
             int neigh4 = in.nextInt();
             int neigh5 = in.nextInt();
-            int neighs[] = new int[] { neigh0, neigh1, neigh2, neigh3, neigh4, neigh5 };
+            int[] neighs = new int[]{neigh0, neigh1, neigh2, neigh3, neigh4, neigh5};
             Cell cell = new Cell(index, richness, neighs);
             game.board.add(cell);
         }
