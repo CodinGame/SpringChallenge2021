@@ -209,7 +209,7 @@
         <ul>
           <li>Les arbres de taille <const>1</const> projettent une ombre sur <const>1</const> case.</li>
           <li>Les arbres de taille <const>2</const> projettent une ombre sur <const>2</const> cases.</li>
-          <li>Les arbres de taille <const>1</const> projettent une ombre sur <const>3</const> cases.</li>
+          <li>Les arbres de taille <const>3</const> projettent une ombre sur <const>3</const> cases.</li>
         </ul>
         </div>
 
