@@ -155,6 +155,7 @@ public class Game {
             return cell.getRichness() == Constants.RICHNESS_NULL;
         });
         List<CubeCoord> validCoords = new ArrayList<CubeCoord>();
+
         while (validCoords.size() < STARTING_TREE_COUNT * 2) {
             validCoords = tryInitStartingTrees(startingCoords);
         }
@@ -169,14 +170,15 @@ public class Game {
     private List<CubeCoord> tryInitStartingTrees(List<CubeCoord> startingCoords) {
         List<CubeCoord> coordinates = new ArrayList<CubeCoord>();
 
+        List<CubeCoord> availableCoords = new ArrayList<>(startingCoords);
         for (int i = 0; i < STARTING_TREE_COUNT; i++) {
-            if (startingCoords.isEmpty()) {
+            if (availableCoords.isEmpty()) {
                 return coordinates;
             }
-            int r = random.nextInt(startingCoords.size());
-            CubeCoord normalCoord = startingCoords.get(r);
+            int r = random.nextInt(availableCoords.size());
+            CubeCoord normalCoord = availableCoords.get(r);
             CubeCoord oppositeCoord = normalCoord.getOpposite();
-            startingCoords.removeIf(coord -> {
+            availableCoords.removeIf(coord -> {
                 return coord.distanceTo(normalCoord) <= STARTING_TREE_DISTANCE ||
                     coord.distanceTo(oppositeCoord) <= STARTING_TREE_DISTANCE;
             });
@@ -550,11 +552,13 @@ public class Game {
             }
             Player player = trees.get(cell.getIndex()).getOwner();
             player.addScore(points);
-            gameManager.addTooltip(player, String.format(
-                "%s scores %d points",
-                player.getNicknameToken(),
-                points
-            ));
+            gameManager.addTooltip(
+                player, String.format(
+                    "%s scores %d points",
+                    player.getNicknameToken(),
+                    points
+                )
+            );
             trees.remove(cell.getIndex());
             gameSummaryManager.addCutTree(player, cell, points);
         });
@@ -710,8 +714,10 @@ public class Game {
                 .count() == 1
         ) {
             trees.forEach((index, tree) -> {
-                tree.getOwner().addBonusScore(1);
-                tree.getOwner().addScore(1);
+                if (tree.getOwner().isActive()) {
+                    tree.getOwner().addBonusScore(1);
+                    tree.getOwner().addScore(1);
+                }
             });
         }
     }
