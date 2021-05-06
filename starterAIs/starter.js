@@ -29,7 +29,7 @@ class Action {
     if (parts[0] === WAIT) {
       return new Action(WAIT)
     }
-    if (parts[1] === SEED) {
+    if (parts[0] === SEED) {
       return new Action(SEED, parseInt(parts[2]), parseInt(parts[1]))
     }
     return new Action(parts[0], parseInt(parts[1]))
