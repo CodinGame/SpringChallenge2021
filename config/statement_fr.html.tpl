@@ -247,7 +247,7 @@
               <img src="https://static.codingame.com/servlet/fileservlet?id=61699004461164" />
               <div class="legend">
                 <div class="description">
-                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur l'arbre petit.
+                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur l'arbre grand.
                 </div>
               </div>
             </div>
