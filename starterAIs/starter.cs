@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 class Cell
 {
-    int index;
-    int richess;
-    int[] neighbours;
+    public int index;
+    public int richess;
+    public int[] neighbours;
 
     public Cell(int index, int richess, int[] neighbours)
     {
@@ -21,10 +21,10 @@ class Cell
 
 class Tree
 {
-    int cellIndex;
-    int size;
-    bool isMine;
-    bool isDormant;
+    public int cellIndex;
+    public int size;
+    public bool isMine;
+    public bool isDormant;
 
     public Tree(int cellIndex, int size, bool isMine, bool isDormant)
     {
@@ -37,10 +37,10 @@ class Tree
 
 class Action
 {
-    const string WAIT = "WAIT";
-    const string SEED = "SEED";
-    const string GROW = "GROW";
-    const string COMPLETE = "COMPLETE";
+    public const string WAIT = "WAIT";
+    public const string SEED = "SEED";
+    public const string GROW = "GROW";
+    public const string COMPLETE = "COMPLETE";
 
     public static Action Parse(string action)
     {
@@ -58,9 +58,9 @@ class Action
         }
     }
 
-    string type;
-    int targetCellIdx;
-    int sourceCellIdx;
+    public string type;
+    public int targetCellIdx;
+    public int sourceCellIdx;
 
     public Action(string type, int sourceCellIdx, int targetCellIdx)
     {
