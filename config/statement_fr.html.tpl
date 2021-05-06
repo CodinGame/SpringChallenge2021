@@ -68,7 +68,7 @@
 
     <div class="statement-rules-content">
       <div style="margin-bottom: 10px">
-        Chaque joueur incarne un <b>esprit de la forêt</b>. La jeu se déroule sur une grille hexagonale représentant la <b>forêt</b>.
+        Chaque joueur incarne un <b>esprit de la forêt</b>. Le jeu se déroule sur une grille hexagonale représentant la <b>forêt</b>.
       </div>
       <div style="margin-bottom: 10px">
         La partie se déroule sur plusieurs rounds appelés <b>jours</b>. Chaque jour peut être composé de plusieurs <b>tours</b> de jeu. À chaque tour, les deux joueurs font une action simultanément.
@@ -542,7 +542,7 @@
       <!-- BEGIN level3 -->
       <div class="statement-new-league-rule">
         <!-- END -->
-        Pour cette ligue, le jeu dure le temps qu'il faut au soleil pour tourner autour du plateau <b>6 fois</b>. Ce qui signifie que les joueur disposent de <b>24 jours</b> pour jouer.
+        Pour cette ligue, le jeu dure le temps qu'il faut au soleil pour tourner autour du plateau <b>4 fois</b>. Ce qui signifie que les joueur disposent de <b>24 jours</b> pour jouer.
         <!-- BEGIN level3 -->
       </div>
       <!-- END -->

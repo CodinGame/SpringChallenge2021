@@ -11,8 +11,8 @@ read oppSun:int oppScore:int oppIsWaiting:bool
 read numberOfTrees:int
 loop numberOfTrees read cellIndex:int size:int isMine:bool isDormant:bool
 
-read numberOfPossibleMoves:int
-loop numberOfPossibleMoves read possibleMove:string(31)
+read numberOfPossibleActions:int
+loop numberOfPossibleActions read possibleAction:string(31)
 
 write WAIT
 
