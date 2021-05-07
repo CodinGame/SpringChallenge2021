@@ -57,7 +57,7 @@ class Game:
         self.possible_actions = []
         self.my_sun = 0
         self.my_score = 0
-        self.opponents_sun = 0
+        self.opponent_sun = 0
         self.opponent_score = 0
         self.opponent_is_waiting = 0
 
