@@ -10,8 +10,6 @@ public:
     Cell () {
         neighbors.resize(6);
     }
-    Cell (int cell_index, int richness, int neighbors) :
-    cell_index{cell_index}, richness{richness}, neighbors{neighbors} {}
 
     void input() {
         cin >> cell_index >> richness;
@@ -27,19 +25,15 @@ public:
 class Tree {
 public:
     Tree () = default;
-    Tree (int cell_index, int size, int is_mine, int is_dormant) :
+    Tree (int cell_index, int size, bool is_mine, bool is_dormant) :
         cell_index{cell_index}, size{size}, is_mine{is_mine}, is_dormant{is_dormant} {}
     void input() {
-        int cellIndex;
-        int size;
-        bool isMine;
-        bool isDormant;
-        cin >> cellIndex >> size >> isMine >> isDormant;
+        cin >> cell_index >> size >> is_mine >> is_dormant;
     }
     int cell_index;
     int size;
-    int is_mine;
-    int is_dormant;
+    bool is_mine;
+    bool is_dormant;
 };
 
 class Game {
@@ -91,13 +85,16 @@ public:
             string type;
             int index = 0;
             cin >> type;
-            if (type == "COMPLETE") {
+            if (type == "WAIT") {
+                possible_actions.push_back(make_pair(type, index));
+            } else if (type == "COMPLETE") {
                 cin >> index;
-                possible_actions.emplace_back(type, index);
+                possible_actions.push_back(make_pair(type, index));
             }
+            // TODO: Add "GROW" and "SEED" once they become available
         }
     }
-    //TODO: Please implement the algorithm in this function
+    // TODO: Please implement the algorithm in this function
     string compute_next_action() {
         string action = "WAIT"; // default
       
