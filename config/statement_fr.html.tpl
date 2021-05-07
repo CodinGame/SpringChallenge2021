@@ -209,7 +209,7 @@
         <ul>
           <li>Les arbres de taille <const>1</const> projettent une ombre sur <const>1</const> case.</li>
           <li>Les arbres de taille <const>2</const> projettent une ombre sur <const>2</const> cases.</li>
-          <li>Les arbres de taille <const>1</const> projettent une ombre sur <const>3</const> cases.</li>
+          <li>Les arbres de taille <const>3</const> projettent une ombre sur <const>3</const> cases.</li>
         </ul>
         </div>
 
@@ -247,7 +247,7 @@
               <img src="https://static.codingame.com/servlet/fileservlet?id=61699004461164" />
               <div class="legend">
                 <div class="description">
-                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur l'arbre petit.
+                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur l'arbre grand.
                 </div>
               </div>
             </div>
