@@ -91,7 +91,7 @@ while True:
         size = int(inputs[1])
         is_mine = inputs[2] != "0"
         is_dormant = inputs[3] != "0"
-        game.trees.append(Tree(cell_index, size, is_mine == 1, is_dormant))
+        game.trees.append(Tree(cell_index, size, is_mine, is_dormant))
 
     number_of_possible_actions = int(input())
     game.possible_actions.clear()
