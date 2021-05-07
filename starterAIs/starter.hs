@@ -45,11 +45,11 @@ data Tree = Tree
     { treeIndex :: Int
     , treeSize :: Int
     , treeIsMine :: Bool
-    , treeIsDormant :: Int
+    , treeIsDormant :: Bool
     } deriving (Show, Eq)
 
 parseTree :: [Int] -> Tree
-parseTree [a,b,c,d] = Tree a b (c==1) d
+parseTree [a,b,c,d] = Tree a b (c==1) (d==1)
 
 
 data Command = GROW Int | SEED Int Int | COMPLETE Int | WAIT deriving (Show)
