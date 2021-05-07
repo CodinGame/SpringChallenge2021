@@ -46,7 +46,7 @@ class Action {
 }
 class Game {
   constructor() {
-    this.round = 0
+    this.day = 0
     this.nutrients = 0
     this.cells = []
     this.possibleActions = []
