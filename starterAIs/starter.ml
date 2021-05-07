@@ -29,7 +29,9 @@ and toString = function (* a good exemple on how you can
 match actions *)
     | GROW t -> Printf.sprintf "GROW %d" t
     | COMPLETE t -> Printf.sprintf "COMPLETE %d" t
-    | WAIT -> "WAIT" in
+    | WAIT -> "WAIT" 
+    | SEED (a,b) -> Printf.sprintf "SEED %d %d" a b
+    in
 
 let numberofcells = int_of_string (input_line stdin) in (* 37 *)
 
