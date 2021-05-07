@@ -51,7 +51,7 @@
       </center>
     </div>
     <div style="margin-bottom: 10px">
-      Le jeu se déroule dans une <b>forêt</b>, dans laquelle de doux esprits résident. Ils sont responsable de veiller à
+      Le jeu se déroule dans une <b>forêt</b>, dans laquelle de doux esprits résident. Ils sont responsables de veiller à
       ce que les arbres achèvent leur <b>cycles de vie</b>.
       <br>
       Deux esprits de la forêt sont en compétition pour la place de l'esprit le plus efficace.
@@ -89,7 +89,7 @@
         Forêt</h3>
 
       <div style="margin-bottom: 10px">
-        La forêt est composée de <const>37</const> cases hexagonales, arrangée en un plus grand hexagone.
+        La forêt est composée de <const>37</const> cases hexagonales, arrangées en un plus grand hexagone.
         <!-- BEGIN level3 level4 -->
         <br>
       <!-- BEGIN level3 -->
@@ -219,7 +219,7 @@
         </div>
 
         <div style="margin-bottom: 10px">
-          Entre chaque jour, le soleil <b>tourne</b> pour pointer vers la directions suivante, revenant à <const>0</const> après la direction <const>5</const>.<br>
+          Entre chaque jour, le soleil <b>tourne</b> pour pointer vers la direction suivante, revenant à <const>0</const> après la direction <const>5</const>.<br>
           La direction du soleil va donc toujours être égale au <const><var>day</var> modulo 6</const>.
         </div>
 
@@ -239,7 +239,7 @@
               <img src="https://static.codingame.com/servlet/fileservlet?id=61699027046513" />
               <div class="legend">
                 <div class="description">
-                  L'arbre moyen projette une ombre <b>menaçante</b> sur l'arbre petit.
+                  L'arbre moyen projette une ombre <b>menaçante</b> sur le petit arbre.
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@
               <img src="https://static.codingame.com/servlet/fileservlet?id=61699004461164" />
               <div class="legend">
                 <div class="description">
-                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur l'arbre grand.
+                  L'arbre moyen projette une ombre qui n'est <b>pas menaçante</b> sur le grand arbre.
                 </div>
               </div>
             </div>
@@ -284,7 +284,7 @@
       </div>
       <div style="margin-bottom: 10px">
         Les petits esprits de la forêt vont récupérer des <b>points de soleil</b> grâce à chaque arbre.<br>
-        Les points seront données au joueur auquel appartient l'arbre.
+        Les points seront donnés au joueur auquel appartient l'arbre.
       </div>
       <!-- END -->
 
@@ -344,7 +344,7 @@
         Actions</h3>
       <!-- BEGIN level1 -->
       <div style="margin-bottom: 10px">
-        Après avoir collecté les points de soleil, chaque joueurs effectuent des <b>tours</b> simultanés en prenant l'une des deux actions possibles.
+        Après avoir collecté les points de soleil, chaque joueur effectue des <b>tours</b> simultanés en prenant l'une des deux actions possibles.
         <br>
         Tant que vous avez assez de points de soleil, vous pouvez prendre autant d'actions que vous souhaitez.
       </div>
@@ -430,10 +430,10 @@
           Vous ne pouvez pas planter une graine sur une case <b>inutilisable</b> ou sur une case qui contient déjà un arbre.
         </div>
         <div style="margin-bottom: 10px">
-          Cette action impacte l'arbre et la graine, ce qui signifies qu'ils seront tous les deux <b>endormis</b> avant le début du prochain jour.
+          Cette action impacte l'arbre et la graine, ce qui signifie qu'ils seront tous les deux <b>endormis</b> avant le début du prochain jour.
         </div>
         <div style="margin-bottom: 10px">
-          Si les deux joueurs plantent une graine au même endroit au même moment, aucun des deux graines n'est planté, les points de soleils sont rendus aux joueurs et les arbres ayant lancé les graines deviennent <b>endormis</b>
+          Si les deux joueurs plantent une graine au même endroit au même moment, aucune des deux graines n'est plantée, les points de soleils sont rendus aux joueurs et les arbres ayant lancé les graines deviennent <b>endormis</b>
         </div>
 
         <!-- BEGIN level3 -->
@@ -553,7 +553,7 @@
       <!-- TODO: rename sun points to something else -->
       <div style="margin-bottom: 10px">Les joueurs gagnent <const>1 point</const> bonus par tranche de 3 points de soleil qu'il leur reste à la fin du jeu.</div>
 
-      <div style="margin-bottom: 10px">Si les joueurs ont le même score, le gagnant est le joueur qui possède le plus d'arbres dans la forêt. Notez qu'une graine est aussi considéré comme étant un arbre.</div>
+      <div style="margin-bottom: 10px">Si les joueurs ont le même score, le gagnant est le joueur qui possède le plus d'arbres dans la forêt. Notez qu'une graine est aussi considérée comme étant un arbre.</div>
 
       <!-- Victory conditions -->
       <div class="statement-victory-conditions">
