@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <tuple>
 
 using namespace std;
 
@@ -42,7 +43,7 @@ private:
         int nutrients = 0;
         vector<Cell> board;
         vector<Tree> trees;
-        vector<pair<string,int>> possible_actions;
+        vector<tuple<string,int,int>> possible_actions;
         int mySun;
         int oppSun;
         int score;
@@ -83,22 +84,31 @@ public:
         cin >> numberOfPossibleMoves;
         for (int i = 0; i < numberOfPossibleMoves; i++) {
             string type;
-            int index = 0;
+            int arg1 = 0;
+            int arg2 = 0;
             cin >> type;
+            
             if (type == "WAIT") {
-                possible_actions.push_back(make_pair(type, index));
+                possible_actions.push_back(make_tuple(type, arg1,arg2));
             } else if (type == "COMPLETE") {
-                cin >> index;
-                possible_actions.push_back(make_pair(type, index));
+                cin >> arg1;
+                possible_actions.push_back(make_tuple(type, arg1,arg2));
             }
-            // TODO: Add "GROW" and "SEED" once they become available
+            else if (type == "GROW") {
+                cin >> arg1;
+                possible_actions.push_back(make_tuple(type, arg1,arg2));
+            }
+            else if (type == "SEED") {
+                cin >> arg1;
+                cin >> arg2;
+                possible_actions.push_back(make_tuple(type, arg1,arg2));
+            }
         }
     }
+    
     // TODO: Please implement the algorithm in this function
     string compute_next_action() {
         string action = "WAIT"; // default
-      
-        // your algorithm !!
 
         return action;
     }
