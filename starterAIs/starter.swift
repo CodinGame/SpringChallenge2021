@@ -28,7 +28,7 @@ struct Cell {
     let n5:Int
 
     init() {
-        let inputs = (readLine()!).split(separator: " ").map(String.init)
+        let inputs = readLine()!.split(separator: " ").map(String.init)
         index = Int(inputs[0])! // 0 is the center cell, the next cells spiral outwards
         richness = Int(inputs[1])! // 0 if the cell is unusable, 1-3 for usable cells
         n0 = Int(inputs[2])! // the index of the neighbouring cell for each direction
@@ -69,9 +69,9 @@ struct Round {
             return tree
         }.reduce(into: [:]) { $0[$1.index] = $1 }
         let numberOfinputs = Int(readLine()!)! // all legal actions
-        possibleActions = Array((0..<numberOfinputs).map { _ in
+        possibleActions = (0..<numberOfinputs).map { _ in
             Action.read()
-        })
+        }
     }
 }
 
