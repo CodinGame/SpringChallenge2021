@@ -90,7 +90,6 @@ func main() {
 		fmt.Sscan(scanner.Text(), &numberOfTrees)
 
 		game.Trees = make([]Tree, numberOfTrees)
-		queue := make([]*Tree, numberOfTrees)
 		for i := 0; i < numberOfTrees; i++ {
 			var cellIndex, size int
 			var isMine, isDormant bool
@@ -101,7 +100,6 @@ func main() {
 			isDormant = _isDormant != 0
 
 			game.Trees[i] = Tree{cellIndex, size, isMine, isDormant}
-			queue[i] = &game.Trees[i]
 		}
 
 		var numberOfPossibleMoves int
