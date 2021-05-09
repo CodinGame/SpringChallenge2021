@@ -13,7 +13,7 @@ object Player extends App {
   // game loop
   while(true) {
     implicit val gameState = parseGameState(defaultCells)
-    Wait.execute()
+    Wait().execute()
 
     // play(gameState)
   }
