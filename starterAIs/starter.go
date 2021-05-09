@@ -8,11 +8,6 @@ import (
 	"strings"
 )
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-
 type Cell struct {
 	Index      int
 	Richness   int // min: 1, max: 3
@@ -45,89 +40,10 @@ type Game struct {
 	OpponentIsWaiting bool
 }
 
-// Create forest
 var game Game
 
 func (game *Game) move() {
-	// Re-arrange tree pointers in queue by cell richness
-	numberOfTrees := len(game.Trees)
-	trees := make([]*Tree, numberOfTrees)
-	for i := 0; i < numberOfTrees; i++ {
-		trees[i] = &game.Trees[i]
-	}
-	for i := 0; i < numberOfTrees; i++ {
-		c1 := game.Board[trees[i].CellId]
-		bias1 := ((c1.Richness - 1) * 2) + game.Nutrients
-		for j := 0; j < numberOfTrees; j++ {
-			if i == j {
-				continue
-			}
-			c2 := game.Board[trees[j].CellId]
-			bias2 := ((c2.Richness - 1) * 2) + game.Nutrients
-			if bias2 < bias1 {
-				// Swap pointers
-				t := trees[j]
-				trees[j] = trees[i]
-				trees[i] = t
-			}
-		}
-	}
-
-	// Pick off first one that belongs to us that is fully grown
-	var chosen *Cell = nil
-	for i := 0; i < numberOfTrees; i++ {
-		t := *trees[i]
-		if t.Mine && t.Size > 2 {
-			chosen = &game.Board[t.CellId]
-			break
-		}
-	}
-	if chosen != nil && game.MySun > 4 {
-		game.Nutrients = game.Nutrients - 1
-		fmt.Printf("COMPLETE %d\n", chosen.Index)
-		return
-	}
-
-	// Re-arrange cell pointers in queue by cell richness
-	// numberOfCells := len(game.Board)
-	// cells := make([]*Cell, numberOfCells)
-	// for i := 0; i < numberOfCells; i++ {
-	// 	cells[i] = &game.Board[i]
-	// }
-	// for i := 0; i < numberOfCells; i++ {
-	// 	c1 := cells[i]
-	// 	// TODO: Fix algo...
-	// 	bias1 := ((c1.Richness - 1) * 2) + game.Nutrients
-	// 	for j := 0; j < numberOfCells; j++ {
-	// 		if i == j {
-	// 			continue
-	// 		}
-	// 		c2 := cells[j]
-	// 		bias2 := ((c2.Richness - 1) * 2) + game.Nutrients
-	// 		if bias2 < bias1 {
-	// 			// Swap pointers
-	// 			c := cells[j]
-	// 			cells[j] = cells[i]
-	// 			cells[i] = c
-	// 		}
-	// 	}
-	// }
-	//
-
-	// Pick off first one that belongs to us that is not yet fully grown
-	for i := 0; i < numberOfTrees; i++ {
-		t := *trees[i]
-		if t.Mine && t.Size < 3 {
-			chosen = &game.Board[t.CellId]
-			break
-		}
-	}
-	if chosen != nil && game.MySun > 4 {
-		fmt.Printf("GROW %d\n", chosen.Index)
-		return
-	}
-
-	// If not, wait.
+	// Add your game code here
 	fmt.Println("WAIT")
 	return
 }
