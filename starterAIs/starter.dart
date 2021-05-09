@@ -111,7 +111,7 @@ void main() {
     int neigh4 = int.parse(inputs[6]);
     int neigh5 = int.parse(inputs[7]);
 
-    List<int> neighs = [neigh1, neigh2, neigh3, neigh4, neigh5];
+    List<int> neighs = [neigh0, neigh1, neigh2, neigh3, neigh4, neigh5];
     Cell cell = Cell(index, richness, neighs);
 
     game.board.add(cell);
