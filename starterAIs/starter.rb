@@ -26,7 +26,7 @@ class Action
     if (parts[0] == WAIT)
       return Action.new(WAIT)
     end
-    if (parts[1] == SEED)
+    if (parts[0] == SEED)
       return Action.new(SEED, parts[2].to_i, parts[1].to_i)
     end
     return Action.new(parts[0], parts[1].to_i)
