@@ -32,20 +32,25 @@ sub loadTurn {
     chomp($t = <STDIN>);
     ($game->{oppSun}, $game->{oppScore}, $game->{oppIsWaiting}) = split / /, $t;
 
-    chomp(my $number_of_trees = <STDIN>);
+    chomp(my $number_of_trees = <>);
+    my @trees;
     for my $i (0..$number_of_trees-1) {
         my $tree = new Tree();
-        chomp($t = <STDIN>);
+        chomp($t = <>);
         ($tree->{cellIndex}, $tree->{size}, $tree->{isMine}, $tree->{isDormant}) = split / /, $t;
-        push @{ $game->{trees} }, $tree;
+        push @trees, $tree;
     }
-
-    chomp(my $number_of_actions = <STDIN>);
+    $game->{trees} = \@trees;
+    
+    chomp(my $number_of_actions = <>);
+    my @actions;
     for my $i (0..$number_of_actions-1) {
-        chomp($t = <STDIN>);
+        chomp($t = <>);
         my $action = Action->parse($t);
-        push @{ $game->{possActions} }, $action;
+        push @actions, $action;
+        #say STDERR $action->getAction();
     }
+    $game->{possActions} = \@actions;
 }
 
 ######################## classes
