@@ -47,6 +47,15 @@ class Tree
     public $isDormant = false;
     public const MAX_SIZE = 3;
     public const HARVEST_SUNS = [0, 1, 2, 3];
+
+    // only for debugging
+    public function toString(): string
+    {
+        return "[" . $this->cellIndex . ": " . $this->size
+            . ($this->isMine ? " M" : " O")
+            . ($this->isDormant ? " D" : " -")
+            . "]";
+    }
 }
 
 class Action
@@ -104,7 +113,6 @@ class Game
     {
         // $day: the game lasts 24 days: 0-23
         fscanf(STDIN, "%d", $this->day);
-        $this->startTime = microtime(true);
         // $nutrients: the base score you gain from the next COMPLETE action
         fscanf(STDIN, "%d", $this->nutrients);
         // $mySun: your sun points
@@ -148,6 +156,31 @@ class Game
         $this->action = new Action(); // defaults to WAIT
         // TODO
     }
+
+    // only for debugging
+    public function logState(): void
+    {
+        error_log("====== Turn"
+            . " [day: " . $this->day
+            . ", nutr: " . $this->nutrients
+            . ", trees: " . $this->numberOfTrees
+            . "]");
+        error_log("  My: " . $this->mySun
+            . " / " . $this->myScore
+            . "; Opp: " . $this->oppSun
+            . " / " . $this->oppScore
+            . " / " . ($this->oppIsWaiting ? "W" : "-"));
+        $s = "";
+        foreach ($this->trees as $tree) {
+            $s .= $tree->toString() . "; ";
+        }
+        error_log("  Trees: " . $s);
+        $s = "";
+        foreach ($this->possibleMoves as $move) {
+            $s .= $move . "; ";
+        }
+        error_log("  Possible moves: " . $s);
+    }
 }
 
 // --- MAIN ---
@@ -156,6 +189,7 @@ $g->board = new Board();
 $g->board->readInitInput();
 while (true) {
     $g->readTurnInput();
+    // $g->logState();
     $g->move();
     $g->output();
 }
