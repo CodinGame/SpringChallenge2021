@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use 5.32.1;
 select STDOUT; $|=1;
+
 my $game = new Game();
 loadMap();
 while (1) {
@@ -32,23 +33,22 @@ sub loadTurn {
     chomp($t = <STDIN>);
     ($game->{oppSun}, $game->{oppScore}, $game->{oppIsWaiting}) = split / /, $t;
 
-    chomp(my $number_of_trees = <>);
+    chomp(my $number_of_trees = <STDIN>);
     my @trees;
     for my $i (0..$number_of_trees-1) {
         my $tree = new Tree();
-        chomp($t = <>);
+        chomp($t = <STDIN>);
         ($tree->{cellIndex}, $tree->{size}, $tree->{isMine}, $tree->{isDormant}) = split / /, $t;
         push @trees, $tree;
     }
     $game->{trees} = \@trees;
     
-    chomp(my $number_of_actions = <>);
+    chomp(my $number_of_actions = <STDIN>);
     my @actions;
     for my $i (0..$number_of_actions-1) {
-        chomp($t = <>);
+        chomp($t = <STDIN>);
         my $action = Action->parse($t);
         push @actions, $action;
-        #say STDERR $action->getAction();
     }
     $game->{possActions} = \@actions;
 }
