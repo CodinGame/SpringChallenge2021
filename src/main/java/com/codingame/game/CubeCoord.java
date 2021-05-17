@@ -2,6 +2,8 @@ package com.codingame.game;
 
 import com.codingame.view.Serializer;
 
+import java.lang.Math;
+
 public class CubeCoord {
     static int[][] directions = new int[][] { { 1, -1, 0 }, { +1, 0, -1 }, { 0, +1, -1 }, { -1, +1, 0 }, { -1, 0, +1 }, { 0, -1, +1 } };
     int x, y, z;
